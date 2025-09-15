@@ -10,6 +10,8 @@ website:
   navbar:
     left: []
     right:
+      - text: "Systems Biology"
+        href: https://stefole.github.io/
       - text: "Course Specification"
         href: https://kurser.dtu.dk/course/27026
 
