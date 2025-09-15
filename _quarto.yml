@@ -16,14 +16,18 @@ website:
 format:
   html:
     theme:
-      light: cosmo
       dark: darkly
+      light: cosmo
+    mainfont: "Inter"
+    monofont: "Menlo"
     highlight-style:
-      light: github
       dark: dracula
+      light: github
     code-copy: true
     code-overflow: wrap
     grid:
       body-width: 1100px
       gutter-width: 1rem
-    css: styles/site.css
+    css:
+      - styles/fonts.css
+      - styles/styles.css
