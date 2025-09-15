@@ -10,8 +10,8 @@ website:
   navbar:
     left: []
     right:
-      - text: "About"
-        href: about.qmd
+      - text: "Course Specification"
+        href: https://kurser.dtu.dk/course/27026
 
 format:
   html:
