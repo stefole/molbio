@@ -1,0 +1,84 @@
+---
+title: "Prokaryotic Protein Synthesis"
+date: 2025-09-15
+description: "Detailed description of prokaryotic protein synthesis"
+categories: ["Prokaryotic", "Protein Synthesis", "Transcription"]
+image: images/Week2_Prokaryotic_Protein_Synthesis.png
+---
+
+<div class="pdf-actions">
+  <a class="btn btn-primary"  href="../pdfs/Week2_Prokaryotic_Protein_Synthesis.pdf" target="_blank" rel="noopener">Open in new tab</a>
+  <a class="btn btn-outline-secondary" href="../pdfs/Week2_Prokaryotic_Protein_Synthesis.pdf" download>Download PDF</a>
+</div>
+
+<div id="pdf-container">
+  <!-- Use <object> for better Safari behavior; provide a fallback link -->
+  <object id="pdf-viewer"
+          data="../pdfs/Week2_Prokaryotic_Protein_Synthesis.pdf"
+          type="application/pdf">
+    <p>Can’t display the PDF here. <a href="../pdfs/Week2_Prokaryotic_Protein_Synthesis.pdf">Open the file</a>.</p>
+  </object>
+</div>
+
+<script>
+(function () {
+  function containerHeight() {
+    const nav = document.querySelector('.navbar');
+    const navH = nav ? nav.getBoundingClientRect().height : 56;
+    const actionsH = (document.querySelector('.pdf-actions')?.getBoundingClientRect().height || 0);
+    const topGap = 24 + actionsH;
+    const bottomGap = 24;
+    return Math.max(360, window.innerHeight - navH - topGap - bottomGap);
+  }
+
+  function sizeViewer() {
+    const h = containerHeight();
+    const container = document.getElementById('pdf-container');
+    const viewer = document.getElementById('pdf-viewer');
+    if (container) container.style.height = h + 'px';
+    if (viewer) {
+      // Explicit height for WebKit; absolute fill from CSS handles Chrome/FF
+      viewer.style.height = h + 'px';
+      viewer.style.width  = '100%';
+    }
+  }
+
+  // Handle layout shifts (Quarto/Bootstrap) and resizes
+  window.addEventListener('resize', sizeViewer, { passive: true });
+  sizeViewer();
+  setTimeout(sizeViewer, 150);
+  setTimeout(sizeViewer, 400);
+
+  // Also react if Quarto toggles dark mode etc. (causes reflow)
+  const ro = new ResizeObserver(sizeViewer);
+  ro.observe(document.body);
+})();
+</script>
+
+<style>
+.pdf-actions { display:flex; flex-wrap:wrap; gap:.5rem; margin:.25rem 0 .75rem; }
+
+/* Container is explicitly sized and relative so the viewer can absolutely fill it */
+#pdf-container {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  min-height: 360px;
+}
+html.quarto-dark #pdf-container { background: #111; }
+
+/* Critical: absolutely fill the container to avoid percent-height collapse */
+#pdf-viewer {
+  position: absolute;
+  inset: 0;          /* top:0; right:0; bottom:0; left:0 */
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* If you try <iframe> instead, apply the same id and CSS to it */
+</style>

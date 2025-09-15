@@ -1,0 +1,5 @@
+---
+title: "About"
+---
+
+This site hosts my personal notes and exercises for **Molecular Biology 27026**.

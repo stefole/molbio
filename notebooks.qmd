@@ -1,0 +1,17 @@
+---
+title: "All Notebooks"
+page-layout: full
+
+listing:
+  contents: "notes/*.qmd"
+  type: grid
+  sort: "date desc"
+  fields: [image, title, date, categories, description]
+  grid-columns: 3
+  page-size: 60
+  categories: true
+  filter-ui: true
+---
+
+Browse all notebooks below.
+
