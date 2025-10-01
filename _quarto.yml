@@ -12,6 +12,8 @@ website:
     right:
       - text: "Systems Biology"
         href: https://stefole.github.io/
+      - text: "Introduction to Bioinformatics"
+        href: https://stefole.github.io/introbio/
       - text: "Course Specification"
         href: https://kurser.dtu.dk/course/27026
 
